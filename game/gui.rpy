@@ -52,8 +52,8 @@ define gui.insensitive_color = '#7070707f'
 ## Couleurs utilisées pour les portions de barres qui ne sont pas remplies.
 ## Elles ne sont pas utilisées directement, mais quand les fichiers d’images
 ## sont régénérés.
-define gui.muted_color = '#c16666'
-define gui.hover_muted_color = '#d69999'
+define gui.muted_color = '#B0544F'
+define gui.hover_muted_color = '#B0544F'
 
 ## Les couleurs utilisées pour les dialogues et les menus de choix.
 define gui.text_color = '#404040'
@@ -72,10 +72,10 @@ define gui.name_text_font = "DejaVuSans.ttf"
 define gui.interface_text_font = "DejaVuSans.ttf"
 
 ## La taille normale pour les dialogues.
-define gui.text_size = 33
+define gui.text_size = 26
 
 ## La taille pour le nom des personnages.
-define gui.name_text_size = 45
+define gui.name_text_size = 36
 
 ## La taille du texte dans l’interface de jeu.
 define gui.interface_text_size = 33
@@ -103,7 +103,7 @@ define gui.game_menu_background = "gui/game_menu.png"
 ## fois.
 
 ## La hauteur de la fenêtre contenant les dialogues.
-define gui.textbox_height = 278
+define gui.textbox_height = 300
 
 ## L’emplacement vertical de la zone de texte à l’écran. 0.0 pour le haut, 0.5
 ## pour le centre et 1.0 pour le bas.
@@ -113,8 +113,8 @@ define gui.textbox_yalign = 1.0
 ## L’emplacement relatif à la zone de texte du nom du personnage en train de
 ## parler. La valeur peut être un nombre entier de pixels depuis la gauche ou le
 ## haut ou 0.5 pour le centre.
-define gui.name_xpos = 360
-define gui.name_ypos = 0
+define gui.name_xpos = 600
+define gui.name_ypos = 57
 
 ## L’alignement horizontal du nom du personnage. La valeur peut être 0.0 pour un
 ## alignement à gauche, 0.5 pour le centrer et 1.0 pour un alignement à droite.
@@ -136,11 +136,11 @@ define gui.namebox_tile = False
 
 ## L’emplacement du dialogue relatif à la zone de texte. La valeur peut être un
 ## nombre entier de pixels depuis la gauche ou le haut ou 0.5 pour le centre.
-define gui.dialogue_xpos = 402
-define gui.dialogue_ypos = 75
+define gui.dialogue_xpos = 470
+define gui.dialogue_ypos = 130
 
 ## La largeur maximale en pixels de la zone de dialogue.
-define gui.dialogue_width = 1116
+define gui.dialogue_width = 1000
 
 ## L’alignement horizontal de la zone de dialogue. La valeur peut être 0.0 pour
 ## un alignement à gauche, 0.5 pour le centrer et 1.0 pour un alignement à
@@ -451,18 +451,20 @@ init python:
     def small():
 
         ## Tailles des polices.
-        gui.text_size = 45
-        gui.name_text_size = 54
+        gui.text_size = 25
+        gui.name_text_size = 34
         gui.notify_text_size = 38
-        gui.interface_text_size = 45
+        gui.interface_text_size = 35
         gui.button_text_size = 45
         gui.label_text_size = 51
 
         ## Ajuste la position de la zone de texte.
         gui.textbox_height = 360
-        gui.name_xpos = 120
+        gui.name_xpos = 200
+        gui.name_ypos = 36
         gui.dialogue_xpos = 135
-        gui.dialogue_width = 1650
+        gui.dialogue_ypos = 115
+        gui.dialogue_width = 1000
 
         ## Changer la taille et l'espacement de diverses choses.
         gui.slider_size = 54

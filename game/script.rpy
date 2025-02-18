@@ -14,4 +14,21 @@ label start:
 
     e "Après avoir ajouté une histoire, des images et de la musique, vous pourrez le présenter au monde entier !"
 
+    menu : 
+        "test"
+
+        "tester": 
+            jump tester
+        
+        "ne pas tester":
+            jump nePasTester 
+    
+label tester:
+    "coucou !"
+
+    return
+
+label nePasTester:
+    "coucou bis !"
+
     return
