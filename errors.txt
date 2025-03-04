@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 29: expected ':' not found.
-    label nePasTester
-                     ^
+File "game/script.rpy", line 10: expected expression
+    define m = 
+               ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Tue Feb 18 12:27:12 2025
+Tue Mar  4 16:01:38 2025

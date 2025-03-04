@@ -1,0 +1,30 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 10, in script
+    define m = Character("Maman", color)
+  File "game/script.rpy", line 10, in <module>
+    define m = Character("Maman", color)
+TypeError: type() takes 1 or 3 arguments
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 10, in script
+    define m = Character("Maman", color)
+  File "C:\Users\yamin\Downloads\renpy-8.3.2-sdk\renpy\ast.py", line 2235, in execute
+    self.set()
+  File "C:\Users\yamin\Downloads\renpy-8.3.2-sdk\renpy\ast.py", line 2249, in set
+    value = renpy.python.py_eval_bytecode(self.code.bytecode)
+  File "C:\Users\yamin\Downloads\renpy-8.3.2-sdk\renpy\python.py", line 1202, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 10, in <module>
+    define m = Character("Maman", color)
+  File "C:\Users\yamin\Downloads\renpy-8.3.2-sdk\renpy\character.py", line 1778, in Character
+    return type(kind)(name, kind=kind, **properties)
+TypeError: type() takes 1 or 3 arguments
+
+Windows-10-10.0.26100 AMD64
+Ren'Py 8.3.2.24090902
+Cybergarde part two 1.0
+Tue Mar  4 16:01:48 2025

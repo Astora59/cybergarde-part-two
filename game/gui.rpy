@@ -107,7 +107,7 @@ define gui.textbox_height = 300
 
 ## L’emplacement vertical de la zone de texte à l’écran. 0.0 pour le haut, 0.5
 ## pour le centre et 1.0 pour le bas.
-define gui.textbox_yalign = 1.0
+define gui.textbox_yalign = 0.9
 
 
 ## L’emplacement relatif à la zone de texte du nom du personnage en train de
