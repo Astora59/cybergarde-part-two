@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 10: expected expression
-    define m = 
-               ^
+File "game/script.rpy", line 263: expected statement.
+    "C'est rare que je fasse parti des derniers à arriver en classe mais parfois ça arrive même aux meilleurs. Sans plus attendre je m'installe, tandis que le cours commence."w
+                                                                                                                                                                                ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Tue Mar  4 16:01:38 2025
+Mon Mar 10 11:34:14 2025

@@ -94,6 +94,8 @@ transform center:
 
 #variables
 default hasCheckedNotification = False
+default bad_choices = 0
+default good_choices = 0
 
 
 # Le jeu commence ici
@@ -196,26 +198,71 @@ label roadToSchool :
     "Ce soir c'est décidé, ça sera une soirée gaming !"
 
     scene bg_roadToSchool_evening with fade
+    play music "music/Evening.mp3" fadeout 1.0 loop
     "La cloche fait enfin retentir la fin de la journée, il est temps de rentrer à la maison et de faire ses devoirs."
 
     scene bg_livingRoom_evening with dissolve
-    "Je suis rentré !"
+    a "Je suis rentré !"
     "Enfin arrivé chez moi, je me déchausse pour enfiler mes pantoufles, c'est le signal qu'une belle soirée peut commencer."
     m "La journée s'est bien passé ?"
     "Ma mère, depuis la cuisine, prépare un copieux repas qui charme déjà mes sens."
     "Je reste un peu avec elle pour raconter nos journées, et ensuite c'est devoirs puis douche !"
 
     scene bg_bedroom_afterSchool with dissolve
+    play music "music/Study And Relax.mp3" fadeout 1.0 loop
     "Une fois enfin posé, j'allume enfin mon ordinateur."
     "Avant de commencer à jouer, je regarde mes mails. On ne sait jamais, on peut toujours recevoir des mails intéressants !"
-    "D'ailleurs, je pouvais en voir un très intéressant"
+    "D'ailleurs, je pouvais en voir un très intéressant..."
     a "Un mail de Discord..."
     "Je commence à lire le mail."
     "De : support-discord@securehelp.com"
     "Objet : ⚠️ Action requise : Vérification de votre compte Discord"
-    "Nous avons détecté une activité inhabituelle sur votre compte Discord et nous soupçonnons une connexion non autorisée depuis Cluj-Napoca, Roumanie."
+    "Nous avons détecté une activité inhabituelle sur votre compte Discord et nous soupçonnons une connexion non autorisée depuis Sihanoukville, Cambodge."
     "📌 Détails de la connexion suspecte :"
-        
+    "Adresse IP : 192.168.XXX.XXX, Localisation : Sihanoukville, Cambodge, Heure : 19h45."
+    "Par mesure de sécurité, votre compte a été temporairement restreint. Veuillez confirmer votre identité dans les 24 heures pour éviter une suspension définitive."
+    "👉 Cliquez ici pour sécuriser votre compte : discord-secure.verification.com/login"
+    "Si vous ne vérifiez pas votre compte dans le délai imparti, nous serons contraints de désactiver définitivement votre compte."
+    "Merci pour votre coopération. L’équipe Discord"
+
+    
+
+    menu: 
+        a "Assez étrange comme email...Je pense que je devrais..."
+
+        "Cliquer sur le lien et entrer le mot de passe.":
+            $ bad_choices += 1
+            jump badChoice_passwordStolen
+
+        "Ne pas cliquer sur le lien et bloquer le compte.":
+            $ good_choices += 1
+            jump goodChoice_passwordSafe
+
+label badChoice_passwordStolen:
+
+    "Ca me parait être un vrai mail de Discord, mieux vaut leur envoyer mon mot de passe pour être sûr."
+    "Ca sonnait assez urgent en tout cas... J'espère qu'ils ont pu rapidement intervenir."
+    "Mais enfin bref ! Aujourd'hui, l'objectif c'est me connecter à MonHun et de jouer toute la nuit."
+    "Je dis ça mais je sais très bien que je suis somnolent dès 22h..."
+
+    scene bg_bedroom_day with fade
+    play music "music/Morning.mp3" fadeout 1.0 loop
+
+    "Mmhh..."
+    "Le réveil fut si doux avec le soleil qui frappe mon visage, aujourd'hui va encore être une belle journée."
+    "Je prends mon téléphone pour regarder l'heure : 7h45. Oh non."
+    "Je suis super en retard, je prends les premiers vêtements que je vois et je fonce vers la sortie."
+
+    scene bg_frontGate_day with dissolve
+    a "Enfin arrivé..."
+    "Ce fut la COURSE dès le matin, ce qui me déplaît énormément je vais pas mentir. Le but de la vie c'est de profiter tranquillement, pas de vivre sous pression."
+    i "Reste pas planté là Adil enfin, rentre tu vas être en retard !"
+    "Le surveillant au portail m'a ramené à la réalité, je m'empresse de rentrer."
+
+    scene bg_classroom_day with dissolve
+    "C'est rare que je fasse parti des derniers à arriver en classe mais parfois ça arrive même aux meilleurs. Sans plus attendre je m'installe, tandis que le cours commence."
+
+
 
 
 
