@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 263: expected statement.
-    "C'est rare que je fasse parti des derniers à arriver en classe mais parfois ça arrive même aux meilleurs. Sans plus attendre je m'installe, tandis que le cours commence."w
-                                                                                                                                                                                ^
+File "game/script.rpy", line 381: expected ':' not found.
+    label culpritFound
+                      ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Mon Mar 10 11:34:14 2025
+Wed Mar 12 10:42:04 2025
