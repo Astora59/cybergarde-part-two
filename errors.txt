@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 381: expected ':' not found.
-    label culpritFound
-                      ^
+File "game/script.rpy", line 398: Menu does not contain any choices.
+    menu: 
+          ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Wed Mar 12 10:42:04 2025
+Mon Mar 17 11:28:15 2025

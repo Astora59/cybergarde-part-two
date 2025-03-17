@@ -76,6 +76,9 @@ image bg_park_night = "park_night.jpg"
 #ending
 image bg_black_screen = "black.jpg"
 
+#screenshots
+image bg_email_1 = "No Draft-imagetoolspro.jpg"
+
 # effects
 #screenshake
 transform shake_bg:
@@ -188,7 +191,7 @@ label roadToSchool :
 
     scene bg_classroom_day with dissolve
     "Une fois assis sur ma chaise, une voix familière vient m'interpeller."
-    i "Yo Adil !"
+    i "Yo [povname] !"
 
     show bamoussa_default at center
     b "Alors t'as pu voir mon message ?"
@@ -234,15 +237,17 @@ label roadToSchool :
     "D'ailleurs, je pouvais en voir un très intéressant..."
     a "Un mail de Echord..."
     "Je commence à lire le mail."
+    scene bg_email_1 with dissolve:
+        zoom 1.4
     "De : support-Echord@securehelp.com"
     "Objet : ⚠️ Action requise : Vérification de votre compte Echord"
-    "Nous avons détecté une activité inhabituelle sur votre compte Echord et nous soupçonnons une connexion non autorisée depuis Sihanoukville, Cambodge."
+    "Nous avons détectéé une activité inhabituel sur votre kompte Echord et nous soupçonnons une connection non autorisér depuis Sihanoukville, Cambodge."
     "📌 Détails de la connexion suspecte :"
     "Adresse IP : 192.168.XXX.XXX, Localisation : Sihanoukville, Cambodge, Heure : 19h45."
-    "Par mesure de sécurité, votre compte a été temporairement restreint. Veuillez confirmer votre identité dans les 24 heures pour éviter une suspension définitive."
+    "Par mesure de sécurité, votre compte a été temporairement restreint. Veuillez confirmer votre identité dans les 24 heures pour évité une suspension définitif."
     "👉 Cliquez ici pour sécuriser votre compte : Echord-secure.verification.com/login"
     "Si vous ne vérifiez pas votre compte dans le délai imparti, nous serons contraints de désactiver définitivement votre compte."
-    "Merci pour votre coopération. L’équipe Echord"
+    "Merci pour votre coop. L’équipe Echord"
 
     
 
@@ -275,7 +280,7 @@ label badChoice_passwordStolen:
     scene bg_frontGate_day with dissolve
     a "Enfin arrivé..."
     "Ce fut la COURSE dès le matin, ce qui me déplaît énormément je vais pas mentir. Le but de la vie c'est de profiter tranquillement, pas de vivre sous pression."
-    i "Reste pas planté là Adil enfin, rentre tu vas être en retard !"
+    i "Reste pas planté là [povname] enfin, rentre tu vas être en retard !"
     "Le surveillant au portail m'a ramené à la réalité, je m'empresse de rentrer."
 
     scene bg_classroom_day with dissolve
@@ -293,7 +298,7 @@ label badChoice_passwordStolen:
     b "En fait je me suis fait hacker mon compte Discord..."
     play music "music/Echoes_of_Time.mp3" fadeout 1.0 loop
     a "Mais nan comment s'est arrivé ?"
-    b "Eh bien c'est ça le problème, j'ai été hacké à cause de toi, tu m'as envoyé un lien étrange et j'ai cliqué dessus."
+    b "Eh bien c'est ça le problème, j'ai été hacké à cause de toi, tu m'as envoyé un lien étrange sur Echord et j'ai cliqué dessus."
     "... A cause de moi ?"
     a "Mais attends je t'ai pas du tout envoyé de lien moi, comment tu peux m'accuser ?"
     hide bamoussa_anxious
@@ -381,6 +386,142 @@ label culpritNotFound:
 label culpritFound:
     a "C'est quand même étrange que ça a commencé quand j'ai rejoint le groupe Echord non ?"
     b "Pas faux, tu penses que ça a un rapport ?"
-    a "C'est évident que ça a un rapport. C'est très probable qu'une personne "
+    a "C'est évident que ça a un rapport. C'est très probable qu'une personne du groupe s'en est pris à moi..."
+    "Je ne vois aucune autre explication. Il se pourrait que ce soit une attaque tout à fait aléatoire, mais si même Bamoussa a été attaqué..."
+    b2 "Le problème c'est que le groupe Echord était ouvert, n'importe qui pouvait envoyer un lien d'invitation à n'importe qui, ce qui fait que les membres du groupe ne sont pas régulés."
+    b "Si possible j'essaierai de changer les paramètres... Dans tous les cas, je ferai tout pour savoir précisément qui rejoint ou quitte le groupe."
+    "Bamoussa n'a préféré ne pas dire qu'il était aussi responsable du nombre d'inconnus dans le groupe Echord, après tout il en a ajouté plusieurs, oups !"
+    b2 "Vous avez besoin de mon aide sur autre chose ?"
+    b "Non ça va merci beaucoup Binta t'es vraiment la meilleure..."
+    b2 "Y a pas de quoi ! Si vous avez de nouveaux problèmes hésitez pas à m'appeler."
+    "Après quelques échanges, chacun part dans sa direction pour rentrer chez eux. Sacrée journée !"
+
+    jump endofChap1
+
+label goodChoice_passwordSafe:
+    "Je vais quand même pas mettre mon mot de passe n'importe où non ?"
+    "Plusieurs points me dérange :"
+    "Tout d'abord l'adresse email est suspecte : au lieu de @echord.com, on @securehelp.com."
+    "J'ai déjà reçu des mails de Echord et c'est pas comme ça que les mails terminent. Pour savoir si ce sont de vrais mails, autant vérifier les anciens."
+    "En plus, le message met la pression avec une menace de suspension, assez étrange tout de même de la part d'Echord."
+    "J'avais lu sur internet que c'était une tactique souvent utilisé par les arnaqueurs."
+    "Et surtout il y a beaucoup de fautes d'orthographe ! Il n'y en aurait eu aucune s'il s'agissait d'un vrai mail de Echord."
+    "Enfin bref, heureusement que j'ai réfléchi avant de faire quoi que ce soit, sinon ça aurait pu être grave."
+    "Mais enfin bref ! Aujourd'hui, l'objectif c'est me connecter à MonHun et de jouer toute la nuit."
+    "Je dis ça mais je sais très bien que je suis somnolent dès 22h..."
+
+    scene bg_bedroom_day with fade
+    play music "music/Morning.mp3" fadeout 1.0 loop
+
+    "Mmhh..."
+    "Le réveil fut si doux avec le soleil qui frappe mon visage, aujourd'hui va encore être une belle journée."
+    "Je prends mon téléphone pour regarder l'heure : 7h45. Oh non."
+    "Je suis super en retard, je prends les premiers vêtements que je vois et je fonce vers la sortie."
+
+    scene bg_frontGate_day with dissolve
+    a "Enfin arrivé..."
+    "Ce fut la COURSE dès le matin, ce qui me déplaît énormément je vais pas mentir. Le but de la vie c'est de profiter tranquillement, pas de vivre sous pression."
+    i "Reste pas planté là [povname] enfin, rentre tu vas être en retard !"
+    "Le surveillant au portail m'a ramené à la réalité, je m'empresse de rentrer."
+
+    scene bg_classroom_day with dissolve
+    "C'est rare que je fasse parti des derniers à arriver en classe mais parfois ça arrive même aux meilleurs. Sans plus attendre je m'installe, tandis que le cours commence."
+    "En passant à côté de Bamoussa, je lui fais signe de la tête, mais il ne me regarde pas. C'est pas grave, on discutera pendant la pause."
+
+    scene bg_courtyard_day with dissolve
+    "Durant la pause, la première chose que je fais est d'interpeller Bamoussa."
+    a "Hey mec ça va ? C'était trop bien hier, on y rejoue ce soir ?"
+    "Bamoussa avait l'air... Perplexe ?"
+
+    show bamoussa_anxious at center
+    b "Ah salut mec..."
+    a "Bah alors t'as pas l'air en forme, qu'est-ce qu'il se passe ?"
+    b "En fait je me suis fait hacker mon compte Discord..."
+    play music "music/Echoes_of_Time.mp3" fadeout 1.0 loop
+    a "Mais nan comment s'est arrivé ?"
+    b "J'ai reçu un mail étrange de Echord qui me demandait de vérifier mon compte car il y a eu une connexion suspecte... Et au final, regarde où j'en suis."
+    b "Surtout que maintenant, y a pleins de personnes qui se moquent de moi sur notre groupe Echord, y a des messages privés qui ont été diffusés !"
+    b "On dirait presque que c'est fait exprès !"
+    a "C'est pas tes amis sur le groupe Echord ?"
+    b "Non j'ai invité plein de personnes que je connais pas ou peu... Je m'étais dit que plus on était fous, plus on rit, mais pas rire de moi !"
+    a "C'est pas ta meilleure décision... Mais enfin bref tu sais ce que tu pourrais faire ?"
+    b "J'ai ma petite idée, on va demander à quelqu'un que je connais, c'est une experte dans ce domaine."
+    "La fin de la récréation approche, on décide de se donner rendez-vous après les cours pour discuter avec la fameuse experte que Bamoussa connait."
+
+    scene bg_roadToSchool_evening with fade
+    play music "music/Covert_Affair.mp3" fadeout 1.0 loop
+    "Les cours étant terminés, je suis Bamoussa à travers la ville pour aller voir la personne qui l'aiderait."
+
+    scene bg_park_evening with dissolve
+    b "On y est."
+    "Le lieu de rendez-vous était un parc non loin de chez moi, c'était un petit endroit calme avec quelques enfants qui jouent en sortant de classe."
+    i "Vous m'avez bien fait attendre !"
+    "Devant nous se tenait notre experte."
+    
+    show bamoussa_default at left
+    b "Ok [povname] je te présente Binta, il y a quelques temps elle a été impliqué dans une affaire similaire de cyberharcèlement, elle pourra nous aider !"
+
+    show Binta_default_happy at right
+    b2 "Salut [povname], ravie de te rencontrer !"
+    "Je salue Binta en lui serrant la main."
+    hide Binta_default_happy
+    show Binta_explaining at right
+    b2 "Bon rentrons dans le vif du sujet : vous avez tous les deux eu votre compte Echord hackés c'est bien ça ?"
+    a "Non pas moi, juste Bamoussa."
+    b2 "Bien, regarde si tu as accèsn à ton compte Bamoussa, à partir de l'application."
+    "Bamoussa sort son téléphone. Il n'y avait plus du tout accès."
+    b2 "Ton compte a été volé et l'auteur du vol a modifié le mot de passe. [povname] a eu plus de chances que toi sur ce coup."
+    hide bamoussa_default
+    show bamoussa_anxious at left
+    b "Qu'est-ce que je peux faire du coup ?"
+    b2 "Essaie de te connecter d'une autre façon. Par exemple, en cliquant sur mot de passe oublié."
+    b2 "Ensuite, tu tentes de réinitialiser ton mot de passe !"
+    b2 "Si le hacker essaie de changer de mail pour couper complètement ton accès au compte, regarde si tu as reçu un mail de changement d'email. Tu peux ensuite annuler la modification !"
+    b "D'accord je vais faire ça... Quoi d'autre ?"
+    b2 "Tu peux ensuite contacter le support du service, ils peuvent t'aider si tu fournis des preuves que c'est bien ton compte bien sûr !"
+    b2 "Si tu utilises le même mot de passe à d'autres endroits, je te conseille de vite les changer !"
+    b "Ok tu me sauves la vie... Merci beaucoup ! Et si tout ça ne fonctionne pas ?"
+    b2 "Alors je te conseille d'abandonner ton compte, de prévenir tes proches et d'en créer un nouveau ! C'est triste mais parfois c'est comme ça."
+
+    "J'interromps leur discussion."
+    a "Admettons qu'il aurait eu encore accès à son compte qu'est-ce qu'il aurait pu faire ?"
+    b2 "Il aurait pu changer de mot de passe, ensuite activer l'authentification à deux facteurs en privilégiant les applications d'authentification. Ca ajoutera une sécurité supplémentaire à l'accès de son compte."
+    "Je prends en note toutes les consignes de Binta, on ne sait jamais."
+    a "Quoi faire ensuite ?"
+    b2 "Il faut déconnecter ensuite tous les appareils connectés à son compte, ils n'auront plus accès, et prévenir ses proches si jamais ils ont reçu des emails piégés à partir de son compte !"
+    a "Tu nous sauves vraiment la vie... Merci beaucoup !"
+    b "Mais qui a pu hacker mon compte ?"
+    menu: 
+        a "Personnellement je pense..."
+
+        "Que c'est un manque de bol.":
+            $ bad_choices += 1
+            jump culpritNotFound
+
+        "Que ça a un rapport avec le groupe Echord.":
+            $ good_choices += 1
+            jump culpritFound2
+
+label culpritFound2:
+    a "C'est quand même étrange que ça a commencé au moment de la création du compte Echord non ?"
+    b "Pas faux, tu penses que ça a un rapport ?"
+    a "C'est évident que ça a un rapport. C'est très probable qu'une personne du groupe s'en est pris à toi..."
+    "Je ne vois aucune autre explication. Il se pourrait que ce soit une attaque tout à fait aléatoire, mais ça m'étonnerait..."
+    b2 "Le problème c'est que le groupe Echord était ouvert, n'importe qui pouvait envoyer un lien d'invitation à n'importe qui, ce qui fait que les membres du groupe ne sont pas régulés."
+    b "Si possible j'essaierai de changer les paramètres... Dans tous les cas, je ferai tout pour savoir précisément qui rejoint ou quitte le groupe."
+    "Bamoussa n'a préféré ne pas dire qu'il était aussi responsable du nombre d'inconnus dans le groupe Echord, après tout il en a ajouté plusieurs... oups !"
+    b2 "Vous avez besoin de mon aide sur autre chose ?"
+    b "Non ça va merci beaucoup Binta t'es vraiment la meilleure..."
+    b2 "Y a pas de quoi ! Si vous avez de nouveaux problèmes hésitez pas à m'appeler."
+    "Après quelques échanges, chacun part dans sa direction pour rentrer chez eux. Sacrée journée !"
+
+label endofChap1: 
+    scene bg_bedroom_night_lightOff
+    play music "music/Late Night Radio.mp3"
+
+    "La sécurité est tellement importante sur Internet et je ne me rends pas vraiment compte. Comme Bamoussa je pourrais me faire harceler du jour au lendemain si je fais pas attention à qui je parle."
+    "Je me mets au lit et j'éteins les lumières. Avant de m'endormir je regarde un peu mon téléphone."
+    "J'ai reçu une nouvelle notification: une demande d'amie sur Echord. Qui ça peut bien être ?"
+    "Pour l'instant ce n'est pas très important, je décide d'être mon téléphone et de m'endormir."
 
     return
