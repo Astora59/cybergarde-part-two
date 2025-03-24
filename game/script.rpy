@@ -524,4 +524,26 @@ label endofChap1:
     "J'ai reçu une nouvelle notification: une demande d'amie sur Echord. Qui ça peut bien être ?"
     "Pour l'instant ce n'est pas très important, je décide d'être mon téléphone et de m'endormir."
 
+    centered "{size=+75}{cps=8}{color=#ffffff}Chapitre 1{/color}{/cps}{/size}{p=5.0}{nw}" 
+    centered "{size=+75}{cps=8}{color=#ffffff}terminé{/color}{/cps}{/size}{p=5.0}{nw}"
+
+label chapter2: 
+    scene bg_bedroom_day with fade
+    play music "music/Morning.mp3"
+
+    "Les doux rayons du soleil viennent me révéiller quelques minutes avant la sonnerie de mon réveil. Ca c'est une belle matinée."
+    centered "{size=+75}{cps=8}{color=#ffffff}Chapitre 2{/color}{/cps}{/size}{p=5.0}{nw}"
+
+    scene bg_livingRoom_day with dissolve
+    "Je prends mon petit déjeuner et me prépare à sortir."
+    "Après les événements du groupe Echord, Bamoussa a supprimé et créé un nouveau compte où seul ses amis peuvent le contacter."
+    "C'est important de rester aux aguets quand on est sur Internet, mais parfois on ne fait pas attention."
+    "Les harceleurs du groupe Echord n'ont pas essayé de me viser, mais il faut être prudent dans ce genre de situations."
+    "Je prends mon sac juste à côté de la porte, et je pars pour une journée de cours."
+
+    scene bg_livingRoom_evening with dissolve
+    "Après ma longue journée, je n'ai qu'une hâte : c'est de me connecter sur mon pc. J'ai hâte de pouvoir jouer et enfin décompresser."
+    "Ma mère et moi discutons d'abord de notre journée, c'est notre tradition après tout."
+    ""
+
     return
