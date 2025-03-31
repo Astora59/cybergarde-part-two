@@ -9,6 +9,7 @@ define b = Character('Bamoussa', color="#000000")
 define b2 = Character('Binta', color="#000000")
 define i = Character("???", color="#000000")
 define m = Character("Maman", color="#000000")
+define l = Character("Lunamystique", color="#000000")
 #characters-sprites
 #Bamoussa
 image bamoussa_default = "bamoussa_default.png"
@@ -542,8 +543,71 @@ label chapter2:
     "Je prends mon sac juste à côté de la porte, et je pars pour une journée de cours."
 
     scene bg_livingRoom_evening with dissolve
+    play music "music/Evening.mp3"
     "Après ma longue journée, je n'ai qu'une hâte : c'est de me connecter sur mon pc. J'ai hâte de pouvoir jouer et enfin décompresser."
     "Ma mère et moi discutons d'abord de notre journée, c'est notre tradition après tout."
-    ""
+    "Après notre petite discussion, je monte à ma chambre pour jouer."
 
+    scene bg_bedroom_afterSchool with dissolve
+    "J'allume mon ordinateur pour voir la notification de la veille."
+    "Une certaine \"Lunamystique <3\" cherche à m'ajouter."
+    menu: 
+        "Avec tout ce qui s'est passé récemment je devrais..."
+
+        "Accepter l'invitation.":
+            $ bad_choices += 1 
+            jump invitationAccepte
+        
+        "Refuser l'invitation.":
+            $ good_choices += 1
+            jump invitationRefuse
+
+label invitationAccepte:
+    l "Salut! J'ai vu tes messages sur le groupe Echord de MonHun et tu as l'air super cool. Ça te dirait de discuter un peu?"
+    "Je reçois un message quasiment immédiatement."
+    menu:
+        "Accepter de discuter":
+            jump acceptChat
+        "Ignorer le message":
+            jump ignoreChat
+
+label acceptChat:
+    "Je décide de répondre."
+    a "Salut! Oui pourquoi pas, tu es nouveau ici?"
+    l "Oui, je découvre un peu le forum. Tu joues à quoi en ce moment?"
+    a "Surtout à [Nom du jeu], et toi?"
+    "LunaMystique: Ah, je connais! D'ailleurs, j'ai un serveur privé avec des potes, tu veux nous rejoindre?"
+    "Son ton est amical, mais quelque chose semble étrange."
+
+label invitationRefuse:
+    "Je pense qu'il est préférable de ne pas accepter l'invitation. Après tout, je ne connais même pas la personne."
+    "Vu les événements récents je pense que c'est préférable de se méfier de toute personne que je ne connais pas."
+    "Je supprime l'invitation."
+    "A présent il est temps de jouer !"
+    scene bg_bedroom_night_lightOn with dissolve
+    play music "music/Late Night Radio.mp3"
+
+    "Après ma petite session de jeu, il est enfin temps d'aller dormir."
+    "J'éteins mon ordinateur, et m'apprête à éteindre la lumière."
+    "Cependant, une nouvelle notification sur mon téléphone vient interrompre mon rituel nocturne."
+    "Une nouvelle fois, l'individu essaie de m'inviter."
+
+    menu:
+        "Cette fois..."
+
+        "Je l'ajoute.":
+            jump invitationAccepte2
+            $ bad_choices += 1
+
+        "Je la bloque.": 
+            jump invitationRefuse2
+            $ good_choices += 1
+
+
+label invitationRefuse2:
+    "Insister ainsi pour me rejoindre est très étrange. Qui sait ce que je risquerais en l'ajoutant ?"
+    "Je préfère ne pas tenter ma chance."
+    "Avec ce qui s'est passé pour Bamoussa, ça serait un peu intrépide..."
+    "Cette fois-ci, je bloque le compte. Je sais très bien comment ça peut dégénérer."
+    "On peut me faire du chantage, "
     return
