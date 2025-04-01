@@ -127,6 +127,7 @@ label start:
     "Cette oeuvre est un travail de fiction. Toute ressemblance à des personnes ou des événements est totalement fortuite."
     "Si vous êtes témoin de toute forme d'harcèlement ou de cyberharcèlement, ne laissez pas faire ces actions et contactez les autorités compétentes."
     $ povname = renpy.input("Quel est ton nom ?", length=32)
+    $ jeu = renpy.input("Quel est ton jeu du moment ?", length=32)
     centered "{size=+75}{cps=8}{color=#ffffff}Chapitre 1{/color}{/cps}{/size}{p=5.0}{nw}"
     scene bg_bedroom_day with fade
     "Hmmm... Sacrée nuit..."
@@ -179,12 +180,11 @@ label eteindre :
 label roadToSchool : 
     scene bg_roadToSchool_day with fade
     "Sur le chemin je croise des amis avec qui j'aime discuter de nos passions communes."
-    "Récemment on joue à un nouveau jeu : MonHun : Wilds ! Il faut chasser des monstres de plus en plus massifs pour être le meilleur chasseur !"
-    "Je viens d'arriver au rang expert, mes amis sont encore au rang novice... Pff les noobs !"
+    "Récemment on joue à un nouveau jeu : [jeu] !"
     "On finit par arriver non loin du collège après une discussion des plus passionnantes..."
 
     scene bg_frontGate_day with dissolve
-    "Arrivé devant le collège, mes collègues chasseurs s'empressent d'entrer."
+    "Arrivé devant le collège, mes camarades s'empressent d'entrer."
     "De mon côté, j'arrive très sereinement au portail, je suis du genre à éviter de me presser pour rien."
     "La vie est vraiment belle quand on a de bonnes notes n'empêche..."
     "Aujourd'hui on commence avec un cours d'anglais, c'est probablement ma matière préférée vu que je suis le meilleur de la classe."
@@ -202,17 +202,17 @@ label roadToSchool :
         a "Bien sûr ! J'ai rejoint le groupe, trop hâte de pouvoir jouer en appel ça sera beaucoup plus simple."
         b "Oh ouais carrément, les appels sur Whatsapp c'est pas très évident..."
         a "Y a qui sur le groupe d'ailleurs ?"
-        b "Oh tu sais quelques amis à moi et des personnes que j'ai rencontré sur MonHun, ils sont grave sympas donc t'as pas de soucis à te faire !"
+        b "Oh tu sais quelques amis à moi et des personnes que j'ai rencontré sur [jeu], ils sont grave sympas donc t'as pas de soucis à te faire !"
     else:
         "Je n'ai même pas regardé cette notification. Oups !"
         a "Euh... J'avoue je n'ai même pas regardé..."
         b "Oh mec fais un petit effort ! Tu risques de faire pleurer ton meilleur ami là !"
         a "Ahah oui désolé... Alors c'était à propos de quoi ?"
-        b "Je t'ai ajouté sur un groupe Echord pour qu'on puisse jouer à MonHun avec d'autres personnes !  "
+        b "Je t'ai ajouté sur un groupe Echord pour qu'on puisse jouer à [jeu] avec d'autres personnes !  "
         a "Y a qui sur le groupe ?"
-        b "Oh tu sais quelques amis à moi et des personnes que j'ai rencontré sur MonHun, ils sont grave sympas donc t'as pas de soucis à te faire !"
+        b "Oh tu sais quelques amis à moi et des personnes que j'ai rencontré sur [jeu], ils sont grave sympas donc t'as pas de soucis à te faire !"
     
-    "De nouveaux chasseurs dans l'équipe... Ca pourrait être sympa franchement, il y a beaucoup de monstres durs à chasser donc c'est important d'avoir des alliés."
+    "De nouveaux coéquipiers dans l'équipe... Ca pourrait être sympa franchement !"
     a "Bah écoute ce soir je suis partant pour y jouer ! Tu seras là ?"
     b "Bien sûr ! Je me connecterai vers 20h, sois là !"
     i "A vos places s'il vous plait le cours commence !"
@@ -267,7 +267,7 @@ label badChoice_passwordStolen:
 
     "Ca me parait être un vrai mail de Echord, mieux vaut leur envoyer mon mot de passe pour être sûr."
     "Ca sonnait assez urgent en tout cas... J'espère qu'ils ont pu rapidement intervenir."
-    "Mais enfin bref ! Aujourd'hui, l'objectif c'est me connecter à MonHun et de jouer toute la nuit."
+    "Mais enfin bref ! Aujourd'hui, l'objectif c'est me connecter à [jeu] et de jouer toute la nuit."
     "Je dis ça mais je sais très bien que je suis somnolent dès 22h..."
 
     scene bg_bedroom_day with fade
@@ -296,7 +296,7 @@ label badChoice_passwordStolen:
     show bamoussa_anxious at center
     b "Ah salut mec..."
     a "Bah alors t'as pas l'air en forme, qu'est-ce qu'il se passe ?"
-    b "En fait je me suis fait hacker mon compte Discord..."
+    b "En fait je me suis fait hacker mon compte Echord..."
     play music "music/Echoes_of_Time.mp3" fadeout 1.0 loop
     a "Mais nan comment s'est arrivé ?"
     b "Eh bien c'est ça le problème, j'ai été hacké à cause de toi, tu m'as envoyé un lien étrange sur Echord et j'ai cliqué dessus."
@@ -408,7 +408,7 @@ label goodChoice_passwordSafe:
     "J'avais lu sur internet que c'était une tactique souvent utilisé par les arnaqueurs."
     "Et surtout il y a beaucoup de fautes d'orthographe ! Il n'y en aurait eu aucune s'il s'agissait d'un vrai mail de Echord."
     "Enfin bref, heureusement que j'ai réfléchi avant de faire quoi que ce soit, sinon ça aurait pu être grave."
-    "Mais enfin bref ! Aujourd'hui, l'objectif c'est me connecter à MonHun et de jouer toute la nuit."
+    "Mais enfin bref ! Aujourd'hui, l'objectif c'est me connecter à [jeu] et de jouer toute la nuit."
     "Je dis ça mais je sais très bien que je suis somnolent dès 22h..."
 
     scene bg_bedroom_day with fade
@@ -437,7 +437,7 @@ label goodChoice_passwordSafe:
     show bamoussa_anxious at center
     b "Ah salut mec..."
     a "Bah alors t'as pas l'air en forme, qu'est-ce qu'il se passe ?"
-    b "En fait je me suis fait hacker mon compte Discord..."
+    b "En fait je me suis fait hacker mon compte Echord..."
     play music "music/Echoes_of_Time.mp3" fadeout 1.0 loop
     a "Mais nan comment s'est arrivé ?"
     b "J'ai reçu un mail étrange de Echord qui me demandait de vérifier mon compte car il y a eu une connexion suspecte... Et au final, regarde où j'en suis."
@@ -469,7 +469,7 @@ label goodChoice_passwordSafe:
     show Binta_explaining at right
     b2 "Bon rentrons dans le vif du sujet : vous avez tous les deux eu votre compte Echord hackés c'est bien ça ?"
     a "Non pas moi, juste Bamoussa."
-    b2 "Bien, regarde si tu as accèsn à ton compte Bamoussa, à partir de l'application."
+    b2 "Bien, regarde si tu as accès à ton compte Bamoussa, à partir de l'application."
     "Bamoussa sort son téléphone. Il n'y avait plus du tout accès."
     b2 "Ton compte a été volé et l'auteur du vol a modifié le mot de passe. [povname] a eu plus de chances que toi sur ce coup."
     hide bamoussa_default
@@ -550,7 +550,7 @@ label chapter2:
 
     scene bg_bedroom_afterSchool with dissolve
     "J'allume mon ordinateur pour voir la notification de la veille."
-    "Une certaine \"Lunamystique <3\" cherche à m'ajouter."
+    "Un certain, ou certaine \"Lunamystique <3\" cherche à m'ajouter."
     menu: 
         "Avec tout ce qui s'est passé récemment je devrais..."
 
@@ -563,27 +563,68 @@ label chapter2:
             jump invitationRefuse
 
 label invitationAccepte:
-    l "Salut! J'ai vu tes messages sur le groupe Echord de MonHun et tu as l'air super cool. Ça te dirait de discuter un peu?"
     "Je reçois un message quasiment immédiatement."
+    l "Salut! J'ai vu tes messages sur le groupe Echord de [jeu] et tu as l'air super cool. Ça te dirait de discuter un peu?"
     menu:
         "Accepter de discuter":
             jump acceptChat
         "Ignorer le message":
             jump ignoreChat
+label ignoreChat:
+    "Je pense qu'il est préférable de ne pas répondre. Après tout, je ne connais même pas la personne."
+    "Vu les événements récents je pense qu'il faut se méfier de toute personne que je ne connais pas."
+    "Je supprime le message."
+    "A présent il est temps de jouer !"
+    jump afterRefusing
 
 label acceptChat:
     "Je décide de répondre."
     a "Salut! Oui pourquoi pas, tu es nouveau ici?"
-    l "Oui, je découvre un peu le forum. Tu joues à quoi en ce moment?"
-    a "Surtout à [Nom du jeu], et toi?"
-    "LunaMystique: Ah, je connais! D'ailleurs, j'ai un serveur privé avec des potes, tu veux nous rejoindre?"
+    l "Nouvelle oui, je découvre un peu le serveur Echord de Bamoussa. Tu joues à quoi en ce moment?"
+    a "Surtout à [jeu], et toi?"
+    play music "music/Symmetry.mp3"
+    l "Ah, je connais! D'ailleurs, j'ai un serveur privé avec des potes, tu veux nous rejoindre?"
     "Son ton est amical, mais quelque chose semble étrange."
+
+    menu:
+        "Demander plus d'infos sur le serveur":
+            jump askServerInfo
+            $ bad_choices += 1
+
+        "Refuser poliment":
+            $ good_choices += 1
+            jump refuseChat
+
+label askServerInfo:
+    a "Super intéressant je suis partant ! C'est quoi l'adresse du serveur ?"
+    l "Oh, je peux te l'envoyer, mais j'aurais besoin de ton email et une photo de toi pour te donner l'accès."
+    "C'est bizarre. Pourquoi demander mon email ? Et surtout une photo ?"
+    "Je lui pose la question."
+    l "Ahah ne t'en fais pas, c'est juste pour bien vérifier que c'est toi !"
+    a "Ok..."
+    "Super étrange. J'ai vu dans des vidéos que c'était possible de faire des montages super détaillés avec les deepfake."
+    "Après elle a bien dit que c'était pour l'identification... Je lui envoie une photo de moi"
+    l "Parfait. Je t'envoie le lien."
+    "Après deux minutes d'attente, elle décide enfin de m'envoyer une invitation !"
+        
+
+label refuseChat:
+    "C'est hors de question de rejoindre un serveur rempli d'inconnus."
+    "j'ai vu des vidéos. Des vidéos horribles."
+    "Des personnes se font ajouter sur des serveurs, où du contenu illégal est diffusé."
+    "On harcèle moralement les victimes qui se font ajouter sur ces serveurs: au début on me demandera pas grand chose, et petit à petit les choses empireront."
+    "Des photos de moi puis plus l'harcèlement continue et plus les demandes deviennent cruelles."
+    "Mais on ne me l'a fait pas à moi."
+    a "C'est gentil mais non merci."
+    "Je supprime la personne de mes amis Echord."
+    jump afterRefusing
 
 label invitationRefuse:
     "Je pense qu'il est préférable de ne pas accepter l'invitation. Après tout, je ne connais même pas la personne."
-    "Vu les événements récents je pense que c'est préférable de se méfier de toute personne que je ne connais pas."
+    "Vu les événements récents je pense qu'il faut se méfier de toute personne que je ne connais pas."
     "Je supprime l'invitation."
     "A présent il est temps de jouer !"
+label afterRefusing:
     scene bg_bedroom_night_lightOn with dissolve
     play music "music/Late Night Radio.mp3"
 
@@ -591,23 +632,11 @@ label invitationRefuse:
     "J'éteins mon ordinateur, et m'apprête à éteindre la lumière."
     "Cependant, une nouvelle notification sur mon téléphone vient interrompre mon rituel nocturne."
     "Une nouvelle fois, l'individu essaie de m'inviter."
+    "Je vais le bloquer, ça sera bien plus simple."
+    "Après autant de stress il est temps pour moi d'aller me coucher."
+    "La journée fut épuisante, et cette soirée encore plus. Je n'ai pas pu jouer tranquillement sans stresser..."
 
-    menu:
-        "Cette fois..."
+    centered "{size=+75}{cps=8}{color=#ffffff}Chapitre 2{/color}{/cps}{/size}{p=5.0}{nw}" 
+    centered "{size=+75}{cps=8}{color=#ffffff}terminé{/color}{/cps}{/size}{p=5.0}{nw}"
 
-        "Je l'ajoute.":
-            jump invitationAccepte2
-            $ bad_choices += 1
-
-        "Je la bloque.": 
-            jump invitationRefuse2
-            $ good_choices += 1
-
-
-label invitationRefuse2:
-    "Insister ainsi pour me rejoindre est très étrange. Qui sait ce que je risquerais en l'ajoutant ?"
-    "Je préfère ne pas tenter ma chance."
-    "Avec ce qui s'est passé pour Bamoussa, ça serait un peu intrépide..."
-    "Cette fois-ci, je bloque le compte. Je sais très bien comment ça peut dégénérer."
-    "On peut me faire du chantage, "
     return
