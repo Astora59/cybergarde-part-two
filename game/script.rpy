@@ -117,6 +117,7 @@ transform center:
 
 #variables
 default hasCheckedNotification = False
+default hasTalkedToBullies = False
 default bad_choices = 0
 default good_choices = 0
 
@@ -160,7 +161,7 @@ label start:
 label notification : 
     "Et puis bon pourquoi ne pas regarder ? J'ai encore un peu de temps non ?"
     "Je prends mon téléphone et clique sur la notification."
-    "\"Yo mec c'était trop cool hier la game, t'es chaud de rejoindre le groupe Echord que j'ai créé ?\""
+    "\"Yo c'était trop cool hier la game, t'es chaud de rejoindre le groupe Echord que j'ai créé ?\""
     "C'était Bamoussa, un ami avec qui j'ai joué hier."
     a "Hello mon gars... Avec plaisir... Envoie le lien. Hop et envoyé !"
     "C'est vrai que pour jouer à des jeux vidéo à plusieurs, Echord est bien meilleur que de passer par le chat vocal du jeu."
@@ -206,7 +207,7 @@ label roadToSchool :
     else:
         "Je n'ai même pas regardé cette notification. Oups !"
         a "Euh... J'avoue je n'ai même pas regardé..."
-        b "Oh mec fais un petit effort ! Tu risques de faire pleurer ton meilleur ami là !"
+        b "Oh fais un petit effort ! Tu risques de faire pleurer ton meilleur ami là !"
         a "Ahah oui désolé... Alors c'était à propos de quoi ?"
         b "Je t'ai ajouté sur un groupe Echord pour qu'on puisse jouer à [jeu] avec d'autres personnes !  "
         a "Y a qui sur le groupe ?"
@@ -294,7 +295,7 @@ label badChoice_passwordStolen:
     "Bamoussa avait l'air... Perplexe ?"
 
     show bamoussa_anxious at center
-    b "Ah salut mec..."
+    b "Ah salut..."
     a "Bah alors t'as pas l'air en forme, qu'est-ce qu'il se passe ?"
     b "En fait je me suis fait hacker mon compte Echord..."
     play music "music/Echoes_of_Time.mp3" fadeout 1.0 loop
@@ -435,7 +436,7 @@ label goodChoice_passwordSafe:
     "Bamoussa avait l'air... Perplexe ?"
 
     show bamoussa_anxious at center
-    b "Ah salut mec..."
+    b "Ah salut..."
     a "Bah alors t'as pas l'air en forme, qu'est-ce qu'il se passe ?"
     b "En fait je me suis fait hacker mon compte Echord..."
     play music "music/Echoes_of_Time.mp3" fadeout 1.0 loop
@@ -528,6 +529,9 @@ label endofChap1:
     centered "{size=+75}{cps=8}{color=#ffffff}Chapitre 1{/color}{/cps}{/size}{p=5.0}{nw}" 
     centered "{size=+75}{cps=8}{color=#ffffff}terminé{/color}{/cps}{/size}{p=5.0}{nw}"
 
+
+
+
 label chapter2: 
     scene bg_bedroom_day with fade
     play music "music/Morning.mp3"
@@ -590,6 +594,7 @@ label acceptChat:
         "Demander plus d'infos sur le serveur":
             jump askServerInfo
             $ bad_choices += 1
+            $ hasTalkedToBullies = True
 
         "Refuser poliment":
             $ good_choices += 1
@@ -606,6 +611,31 @@ label askServerInfo:
     "Après elle a bien dit que c'était pour l'identification... Je lui envoie une photo de moi"
     l "Parfait. Je t'envoie le lien."
     "Après deux minutes d'attente, elle décide enfin de m'envoyer une invitation !"
+    "Je décide de rejoindre."
+    "Une fois arrivée, elle m'envoie de nouveau un message."
+    l "Viens sur la discussion vocale, qu'on puisse parler, je te présenterai à mes amis !"
+    "Et pourquoi pas ? Ils jouent probablement tous à [jeu] maintenant."
+    "Une fois le groupe rejoint, une multitude de voix explose mes tympans."
+    i "T'as vu ta tête ? Sérieux, t'aurais dû réfléchir avant d'envoyer ça."
+    i "Quelqu'un l'a screenshotté ? Faut qu'on garde ça !"
+    i "C'est quoi cette créature ?"
+    "Un flot incessant d'insultes et de moqueries m'assaille."
+    l "C'est bon les gars arrêtez..."
+    l "Pardonne leur ils sont un peu bêtes."
+    i "Ouais j'espère que tu nous en voudras pas !"
+    a "Euh ouais tranquille c'est pas grave..."
+    "Ils font une très mauvaise première impression..."
+    "Je décide de rester avec eux pour jouer un temps à [jeu], c'est pour ça que je suis dessus d'ailleurs."
+    "Les moqueries continuent mais sont moins agressives, je ressens tout de même une certaine tension."
+    "A la fin de nos parties, les moqueries reprennent de plus belles."
+    i "Pourquoi il est encore là ? Personne l'aime."
+    i "Allez, pleure un coup, ça ira mieux."
+    "Comment c'est possible d'être aussi mauvais ? En regardant plus précisément leur serveur Echord, je me rends compte que ces derniers harcèlent bien des gens."
+    "Ils ajoutent des individus qu'ils rencontrent un peu partout, pour ensuite se moquer d'eux."
+    "Ayant été sincèrement blessé par leur propos, je décide de quitter et bloquer le groupe Echord."
+    "Et si c'était eux à l'origine de l'harcèlement de Bamoussa ?"
+
+    jump afterRefusing
         
 
 label refuseChat:
@@ -638,5 +668,107 @@ label afterRefusing:
 
     centered "{size=+75}{cps=8}{color=#ffffff}Chapitre 2{/color}{/cps}{/size}{p=5.0}{nw}" 
     centered "{size=+75}{cps=8}{color=#ffffff}terminé{/color}{/cps}{/size}{p=5.0}{nw}"
+
+label chapter3:
+    scene bg_bedroom_day with fade
+    play music "music/Morning.mp3"
+
+    "Comme à mon habitude, je me lève tranquillement afin de commencer la journée sans stress."
+    "J'ai passé une nuit assez agitée avec ce qui s'est passé hier... Je me prépare et pars de chez moi, espérant que la journée me changera les idées."
+
+    scene bg_roadToSchool_day with dissolve
+    "Sur le trajet vers l'école, je reçois une nouvelle notification. Il s'agit d'un mail d'un certain Stéphane Kouadi"
+    "Je décide de la lire."
+    "Objet : Félicitations [povname], vous avez été sélectionné !"
+    "Je me permets de vous contacter car vous avez été tiré au sort dans le cadre de notre grand jeu concours \"Jeunes Connectés 2025\", organisé en partenariat avec Samsung."
+    "🎉 Félicitations ! Vous avez remporté un Samsung Galaxy Ultra S25 (valeur 1299€)."
+    "Afin de recevoir votre lot, il vous suffit simplement de régler les frais de livraison internationaux, d’un montant unique de 45€, par transfert Petpat à notre comptable agréé."
+    "Sinon, il vous sera demandé une photo de vous, torse nu avec une pancarte \"Merci pour le Samsung Galaxy Ultra S25\" comme paiement."
+    "Veuillez effectuer le paiement dès aujourd’hui pour garantir l’envoi de votre téléphone sous 72h ouvrables."
+    "Merci de votre réactivité, et encore bravo pour votre participation !"
+
+    "Euh... Je ne sais pas trop quoi penser. Surtout de la photo qui m'est demandé."
+    menu: 
+        "Je pense que c'est un fake. Mieux vaut ignorer":
+            $ good_choices += 1
+            jump fake
+        
+        "C'est probablement un vrai jeu concours.":
+            $ bad_choices += 1
+            jump participeConcours
+
+label fake:
+    "C'est une évidence que le mail est faux. Ca en est presque risible."
+    "Tout est faux : le jeu concours, le lot à gagner, les frais de port... Ne parlons pas de la photo qui est demandé."
+    "Je pourrais très bien faire une recherche sur internet, et voir que les jeunes connectés 2025 n'existe pas. Je n'y ai même pas participé c'est pour dire !"
+    "Et je sais déjà de quoi il s'agit : ce sont les mêmes harceleurs du Echord qui essaient de me contacter."
+    "Ce qui est inquiétant c'est qu'ils ont pu trouver mon adresse email... Quoi d'autre pourront-ils trouver sur moi ensuite ?"
+    "L'anxiété monte en moi. J'ai l'impression que tous les regards se posent sur moi."
+    "J'arrive bientôt devant l'école. Une fois là-bas je sais que je me sentirais déjà plus en sécurité..."
+    "Je vais expliquer la situation à Bamoussa, il doit savoir et ne pas faire confiance à n'importe qui."
+
+    scene bg_classroom_day with dissolve
+    "Une fois arrivé en classe, j'explique la situation à Bamoussa."
+    show bamoussa_anxious at center
+    b "J'en suis sûr qu'il s'agit des mêmes personnes du groupe Echord, il essaie de nous manipuler pour ensuite nous harceler."
+    "J'ai regardé leur mode opératoire sur Vtube, et ils essaient d'obtenir des informations sur nous pour nous harceler en ligne comme dans la vraie vie."
+    a "J'ai eu raison de me méfier alors..."
+    "Mes soupçons se confirment. D'où la demande d'une photo. Je pense qu'il s'agit d'un moyen pour eux d'avoir une emprise psychologique sur nous."
+    "Je ne compte pas me laisser faire en interagissant avec eux."
+    b "Bloque ce mail, et on verra un adulte après les cours. Il faudrait en parler à nos parents aussi."
+    if hasTalkedToBullies == True:
+        "J'explique d'ailleurs à Bamoussa la discussion que j'ai eu sur le serveur."
+        b "je reconnais leur nom... C'était des gens qui m'ont aussi contacté une fois. Ces personnes sont horribles."
+        b "On doit clairement éviter de parler à n'importe qui sur internet."
+        a "Pas faux..."
+        "La cloche sonne, signalant le début de la récréation. Bamoussa et moi continuons notre discussion sur le cyberharcèlement et comment s'en prémunir."
+
+    else:
+        "La cloche sonne, signalant le début de la récréation. Bamoussa et moi continuons notre discussion sur le cyberharcèlement et comment s'en prémunir."
+
+
+    jump afterEmail
+
+
+label participeConcours:
+    "Oh trop bien un jeu concours ! Vu le nombre de fois où je participe sans gagner, ça fait du bien d'enfin réussir."
+    "Un peu étrange tout de même de pouvoir payer avec une image, mais je n'ai pas d'argent, donc ça m'arrange !"
+    "Je vais en parler à Bamoussa quand j'arrive au collège, il sera trop jaloux !"
+    scene bg_classroom_day with dissolve
+    "Une fois arrivé en classe, j'explique la situation à Bamoussa."
+    show bamoussa_anxious at center
+    b "J'en suis sûr qu'il s'agit des mêmes personnes du groupe Echord, il essaie de nous manipuler pour ensuite nous harceler."
+    a "Il ne ferait quand même pas ça... Si ?"
+    b "Réfléchis un peu; tu trouves pas étrange qu'on te contacte depuis que tu as rejoint le serveur Echord. On est la cible d'une ou plusieurs personne."
+    "Il a pas tort... Comment ne l'ai-je pas vu avant ?"
+    b "Bloque ce mail, et on verra un adulte après les cours. Il faudrait en parler à nos parents aussi."
+
+label afterEmail:
+    scene bg_livingRoom_evening with fade
+    play music "music/Evening.mp3"
+
+    "Une fois arrivée chez moi, je décide de tout expliquer à ma mère."
+    "Elle était tout d'abord choquée quand j'ai commencé mon histoire, puis son choc est passé à l'énervement."
+    "Ce n'est pas contre moi qu'elle était énervée. C'est contre ces individus qui nous ciblent qu'elle l'est."
+    "Demain est un jour férié; on compte bien aller porter plainte afin que justice soit rendue. Ils n'auront plus l'occasion d'harcèler quelqu'un d'autre une fois que le problème sera résolu."
+
+    scene bg_bedroom_night_lightOff with dissolve
+    play music "music/night_time.mp3"
+
+    "Ces derniers jours m'ont beaucoup fait réfléchir à la sécurité sur Internet."
+    "Je pensais que ça n’arrivait qu’aux autres. Qu’on repérait facilement les arnaques, les faux profils, les pièges. Mais la vérité, c’est qu’ils savent exactement comment s’y prendre."
+    "Il y a des individus mal intentionnés dans notre monde, qui chercheront par tous les moyens possibles de te détruire par pur plaisir."
+    "Derrière un écran, tout le monde peut mentir. En sachant cela, on a tous intérêt à apprendre comment vivre ensemble, ou sinon à apprendre à se protéger."
+    "Je réfléchis à tout ça avant de m'endormir paisiblement."
+
+    centered "{size=+75}{cps=8}{color=#ffffff}Chapitre 2{/color}{/cps}{/size}{p=5.0}{nw}" 
+    centered "{size=+75}{cps=8}{color=#ffffff}terminé{/color}{/cps}{/size}{p=5.0}{nw}"
+
+    scene bg_black_screen with fade
+
+    centered "{size=+75}{cps=8}{color=#ffffff}CRÉDITS{/color}{/cps}{/size}{p=5.0}{nw}"
+    centered "{size=+75}{cps=8}{color=#ffffff}Scénario: Étudiants de Louise Michel{/color}{/cps}{/size}{p=5.0}{nw}"
+    centered "{size=+75}{cps=8}{color=#ffffff}programmation: Vegacy{/color}{/cps}{/size}{p=5.0}{nw}"
+
 
     return
