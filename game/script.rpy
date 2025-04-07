@@ -584,14 +584,14 @@ label ignoreChat:
 label acceptChat:
     "Je décide de répondre."
     a "Salut! Oui pourquoi pas, tu es nouveau ici?"
-    l "Nouvelle oui, je découvre un peu le serveur Echord de Bamoussa. Tu joues à quoi en ce moment?"
+    l "Nouvelle oui, je découvre un peu le serveur Echord que Bamoussa a créé autour de [jeu]. Tu joues à quoi en ce moment?"
     a "Surtout à [jeu], et toi?"
     play music "music/Symmetry.mp3"
     l "Ah, je connais! D'ailleurs, j'ai un serveur privé avec des potes, tu veux nous rejoindre?"
     "Son ton est amical, mais quelque chose semble étrange."
 
     menu:
-        "Demander plus d'infos sur le serveur":
+        "Accepter de rejoindre":
             jump askServerInfo
             $ bad_choices += 1
             $ hasTalkedToBullies = True
@@ -608,7 +608,7 @@ label askServerInfo:
     l "Ahah ne t'en fais pas, c'est juste pour bien vérifier que c'est toi !"
     a "Ok..."
     "Super étrange. J'ai vu dans des vidéos que c'était possible de faire des montages super détaillés avec les deepfake."
-    "Après elle a bien dit que c'était pour l'identification... Je lui envoie une photo de moi"
+    "Après elle a bien dit que c'était pour l'identification... Je lui envoie une photo de moi."
     l "Parfait. Je t'envoie le lien."
     "Après deux minutes d'attente, elle décide enfin de m'envoyer une invitation !"
     "Je décide de rejoindre."
@@ -632,7 +632,10 @@ label askServerInfo:
     i "Allez, pleure un coup, ça ira mieux."
     "Comment c'est possible d'être aussi mauvais ? En regardant plus précisément leur serveur Echord, je me rends compte que ces derniers harcèlent bien des gens."
     "Ils ajoutent des individus qu'ils rencontrent un peu partout, pour ensuite se moquer d'eux."
-    "Ayant été sincèrement blessé par leur propos, je décide de quitter et bloquer le groupe Echord."
+    "Il y a plusieurs canaux de discussion avec des images de d'autres personnes. Certaines images représentent les individus dénudés."
+    "Dans ces canaux, on y voit donc leurs insultes, mais aussi les chantages que ces derniers font à leurs victimes."
+    "Ils utilisent donc leur serveur Echord comme un moyen d'organiser leur cyberharcèlement... Ce sont des monstres !"
+    "Ayant été sincèrement blessé par leur propos et par ce que j'ai vu, je décide de quitter et bloquer le groupe Echord."
     "Et si c'était eux à l'origine de l'harcèlement de Bamoussa ?"
 
     jump afterRefusing
@@ -764,7 +767,10 @@ label afterEmail:
     centered "{size=+75}{cps=8}{color=#ffffff}Chapitre 2{/color}{/cps}{/size}{p=5.0}{nw}" 
     centered "{size=+75}{cps=8}{color=#ffffff}terminé{/color}{/cps}{/size}{p=5.0}{nw}"
 
-    scene bg_black_screen with fade
+    scene bg_black_screen with fade:
+        xalign 0.5
+        yalign 0.2
+        zoom 2.0
 
     centered "{size=+75}{cps=8}{color=#ffffff}CRÉDITS{/color}{/cps}{/size}{p=5.0}{nw}"
     centered "{size=+75}{cps=8}{color=#ffffff}Scénario: Étudiants de Louise Michel{/color}{/cps}{/size}{p=5.0}{nw}"
