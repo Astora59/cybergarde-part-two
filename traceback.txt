@@ -1,22 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 644, in script
-    jump invitationRefuse2
-ScriptError: could not find label 'invitationRefuse2'.
+  File "game/script.rpy", line 125, in script
+    image email_darken = At(bg_email_1, lighting_darken)
+  File "game/script.rpy", line 125, in <module>
+    image email_darken = At(bg_email_1, lighting_darken)
+NameError: name 'bg_email_1' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 644, in script
-    jump invitationRefuse2
-  File "C:\Users\yamin\Downloads\renpy-8.3.2-sdk\renpy\ast.py", line 1699, in execute
-    rv = renpy.game.script.lookup(target)
-  File "C:\Users\yamin\Downloads\renpy-8.3.2-sdk\renpy\script.py", line 1103, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'invitationRefuse2'.
+  File "game/script.rpy", line 125, in script
+    image email_darken = At(bg_email_1, lighting_darken)
+  File "C:\Users\yamin\Downloads\renpy-8.3.2-sdk\renpy\ast.py", line 920, in execute
+    img = renpy.python.py_eval_bytecode(self.code.bytecode)
+  File "C:\Users\yamin\Downloads\renpy-8.3.2-sdk\renpy\python.py", line 1202, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 125, in <module>
+    image email_darken = At(bg_email_1, lighting_darken)
+NameError: name 'bg_email_1' is not defined
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.2.24090902
 Cybergarde part two 1.0
-Tue Apr  1 10:41:58 2025
+Tue Jul 15 10:39:47 2025

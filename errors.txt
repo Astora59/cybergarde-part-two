@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 636: expected statement.
-    3
-     ^
+File "game/script.rpy", line 125: is not terminated with a newline. (Check strings and parenthesis.)
+(Perhaps you left out a " at the end of the first line.)
+    image email_darken = At(bg_email_1", lighting_darken)
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Tue Apr  1 11:05:40 2025
+Tue Jul 15 10:39:49 2025

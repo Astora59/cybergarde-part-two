@@ -78,7 +78,7 @@ image bg_park_night = "park_night.jpg"
 image bg_black_screen = "black.jpg"
 
 #screenshots
-image bg_email_1 = "No Draft-imagetoolspro.jpg"
+image bg_email_1 = "email.png"
 
 # effects
 #screenshake
@@ -120,6 +120,7 @@ default hasCheckedNotification = False
 default hasTalkedToBullies = False
 default bad_choices = 0
 default good_choices = 0
+
 
 
 # Le jeu commence ici
@@ -328,47 +329,40 @@ label badChoice_passwordStolen:
 
     scene bg_park_evening with dissolve
     b "On y est."
-    "Le lieu de rendez-vous était un parc non loin de chez moi, c'était un petit endroit calme avec quelques enfants qui jouent en sortant de classe."
-    i "Vous m'avez bien fait attendre !"
-    "Devant nous se tenait notre experte."
-    
+    "Le rendez-vous avait lieu dans un parc calme non loin de chez moi."
+    i "Vous m'avez fait attendre !"
+    "Notre experte était déjà là."
+
     show bamoussa_default at left
-    b "Ok [povname] je te présente Binta, il y a quelques temps elle a été impliqué dans une affaire similaire de cyberharcèlement, elle pourra nous aider !"
+    b "[povname], voici Binta. Elle a déjà vécu une situation de cyberharcèlement, elle pourra nous aider."
 
     show Binta_default_happy at right
     b2 "Salut [povname], ravie de te rencontrer !"
-    "Je salue Binta en lui serrant la main."
+    "Je lui serre la main."
     hide Binta_default_happy
     show Binta_explaining at right
-    b2 "Bon rentrons dans le vif du sujet : vous avez tous les deux eu votre compte Echord hackés c'est bien ça ?"
-    a "C'est ça."
-    b2 "Bien, regardez à présent si vous avez accès à votre compte, à partir de l'application."
-    "Bamoussa et moi sortons nos téléphones. J'avais effectivement accès à mon compte, mais plus Bamoussa."
-    b2 "Bon, première étape pour [povname], c'est de modifier ton mot de passe tout de suite. Quant à toi Bamoussa c'est trop tard."
-    b "Comment ça ?"
-    b2 "Ton compte a été volé et l'auteur du vol a modifié le mot de passe. [povname] a eu plus de chances que toi sur ce coup."
+
+    b2 "Alors, vos comptes Echord ont été hackés, c’est bien ça ?"
+    a "Oui."
+    "On sort nos téléphones. Moi, j’ai encore accès. Pas Bamoussa."
+    b2 "[povname], change ton mot de passe tout de suite. Pour Bamoussa, c’est plus compliqué."
+
     hide bamoussa_default
     show bamoussa_anxious at left
-    b "Qu'est-ce que je peux faire du coup ?"
-    b2 "Essaie de te connecter d'une autre façon. Par exemple, en cliquant sur mot de passe oublié."
-    b2 "Ensuite, tu tentes de réinitialiser ton mot de passe !"
-    b2 "Si le hacker essaie de changer de mail pour couper complètement ton accès au compte, regarde si tu as reçu un mail de changement d'email. Tu peux ensuite annuler la modification !"
-    b "D'accord je vais faire ça... Quoi d'autre ?"
-    b2 "Tu peux ensuite contacter le support du service, ils peuvent t'aider si tu fournis des preuves que c'est bien ton compte bien sûr !"
-    b2 "Si tu utilises le même mot de passe à d'autres endroits, je te conseille de vite les changer !"
-    b "Ok tu me sauves la vie... Merci beaucoup ! Et si tout ça ne fonctionne pas ?"
-    b2 "Alors je te conseille d'abandonner ton compte, de prévenir tes proches et d'en créer un nouveau ! C'est triste mais parfois c'est comme ça."
+    b "Je fais quoi alors ?"
+    b2 "Tente 'mot de passe oublié' et regarde tes mails pour annuler un éventuel changement d’adresse."
+    b2 "Contacte aussi le support avec des preuves, et change tes mots de passe ailleurs s’ils sont identiques."
+    b "Et si ça ne marche pas ?"
+    b2 "Alors il faudra prévenir tes proches, et créer un nouveau compte."
 
-    "J'interromps leur discussion."
-    a "J'ai modifié mon mot de passe... Maintenant quoi ?"
-    b2 "Ensuite, active l'authentification à deux facteurs en privilégiant les applications d'authentification. Ca ajoutera une sécurité supplémentaire à l'accès de ton compte."
-    "J'applique à la lettre toutes les consignes de Binta."
-    a "Quoi faire ensuite ?"
-    b2 "Déconnecte ensuite tous les appareils connectés à ton compte, ils n'auront plus accès, et préviens tes proches si jamais ils ont reçu des emails piégés à partir de ton compte !"
-    a "Tu nous sauves vraiment la vie... Merci beaucoup !"
-    b "Mais qui a pu hacker notre compte ?"
+    "J’interviens."
+    a "J’ai changé mon mot de passe. Et maintenant ?"
+    b2 "Active l’authentification à deux facteurs, et déconnecte les appareils inconnus. Préviens tes proches au cas où."
 
-    menu: 
+    a "Merci encore !"
+    b "Mais qui a pu faire ça ?"
+
+    menu:
         a "Personnellement je pense..."
 
         "Que c'est un manque de bol.":
@@ -380,23 +374,23 @@ label badChoice_passwordStolen:
             jump culpritFound
 
 label culpritNotFound:
-    a "Je pense qu'on a juste pas eu de chance. Ca aurait pu tomber sur n'importe qui."
-    b2 "C'est pas faux, mais c'est quand même étrange... Bamoussa m'a expliqué la situation, et ça semble avoir commencé quand de nombreuses personnes ont rejoint votre groupe Echord."
-    a "Ah oui c'est possible que le coupable se cache dans ce groupe... Je n'y ai pas pensé."
-    b2 "La prochaine fois vous créérez un groupe privé, reservé uniquement aux amis !"
-    b "Ahah oui bien sûr...Merci pour ton aide précieuse."
+    a "Je pense qu'on a juste pas eu de chance."
+    b2 "Peut-être, mais l'arrivée massive d’inconnus dans Echord est suspecte."
+    a "C’est vrai… On aurait dû faire un groupe privé."
+    b "Oui… Merci pour ton aide Binta."
+
 label culpritFound:
-    a "C'est quand même étrange que ça a commencé quand j'ai rejoint le groupe Echord non ?"
-    b "Pas faux, tu penses que ça a un rapport ?"
-    a "C'est évident que ça a un rapport. C'est très probable qu'une personne du groupe s'en est pris à moi..."
-    "Je ne vois aucune autre explication. Il se pourrait que ce soit une attaque tout à fait aléatoire, mais si même Bamoussa a été attaqué..."
-    b2 "Le problème c'est que le groupe Echord était ouvert, n'importe qui pouvait envoyer un lien d'invitation à n'importe qui, ce qui fait que les membres du groupe ne sont pas régulés."
-    b "Si possible j'essaierai de changer les paramètres... Dans tous les cas, je ferai tout pour savoir précisément qui rejoint ou quitte le groupe."
-    "Bamoussa n'a préféré ne pas dire qu'il était aussi responsable du nombre d'inconnus dans le groupe Echord, après tout il en a ajouté plusieurs, oups !"
-    b2 "Vous avez besoin de mon aide sur autre chose ?"
-    b "Non ça va merci beaucoup Binta t'es vraiment la meilleure..."
-    b2 "Y a pas de quoi ! Si vous avez de nouveaux problèmes hésitez pas à m'appeler."
-    "Après quelques échanges, chacun part dans sa direction pour rentrer chez eux. Sacrée journée !"
+    a "Ça a commencé après avoir rejoint le groupe Echord, non ?"
+    b "Tu crois que ça vient de là ?"
+    a "Très probable. Quelqu’un du groupe a dû s’en prendre à nous."
+    b2 "C'était un groupe ouvert, sans modération. C’est dangereux."
+    b "Je vais revoir les paramètres et mieux surveiller les membres."
+    "Bamoussa ne dit rien, même s’il a ajouté beaucoup d’inconnus…"
+
+    b2 "Besoin d’autre chose ?"
+    b "Non, merci Binta, t’assures."
+    b2 "Avec plaisir. N’hésitez pas à me recontacter."
+    "Chacun rentre chez soi. Sacrée journée."
 
     jump endofChap1
 
@@ -450,51 +444,52 @@ label goodChoice_passwordSafe:
     b "J'ai ma petite idée, on va demander à quelqu'un que je connais, c'est une experte dans ce domaine."
     "La fin de la récréation approche, on décide de se donner rendez-vous après les cours pour discuter avec la fameuse experte que Bamoussa connait."
 
+
     scene bg_roadToSchool_evening with fade
     play music "music/Covert_Affair.mp3" fadeout 1.0 loop
-    "Les cours étant terminés, je suis Bamoussa à travers la ville pour aller voir la personne qui l'aiderait."
+    "Les cours terminés, je suis Bamoussa à travers la ville. Il m’emmène voir quelqu’un qui pourrait nous aider."
 
     scene bg_park_evening with dissolve
-    b "On y est."
-    "Le lieu de rendez-vous était un parc non loin de chez moi, c'était un petit endroit calme avec quelques enfants qui jouent en sortant de classe."
+    b "On est arrivés."
+    "Le rendez-vous avait lieu dans un petit parc calme. Une femme nous attendait déjà."
     i "Vous m'avez bien fait attendre !"
-    "Devant nous se tenait notre experte."
-    
+    "Voici notre experte."
+
     show bamoussa_default at left
-    b "Ok [povname] je te présente Binta, il y a quelques temps elle a été impliqué dans une affaire similaire de cyberharcèlement, elle pourra nous aider !"
+    b "Je te présente Binta. Elle a déjà vécu une situation de cyberharcèlement. Elle va pouvoir nous aider."
 
     show Binta_default_happy at right
     b2 "Salut [povname], ravie de te rencontrer !"
-    "Je salue Binta en lui serrant la main."
+    "Je la salue."
+
     hide Binta_default_happy
     show Binta_explaining at right
-    b2 "Bon rentrons dans le vif du sujet : vous avez tous les deux eu votre compte Echord hackés c'est bien ça ?"
-    a "Non pas moi, juste Bamoussa."
-    b2 "Bien, regarde si tu as accès à ton compte Bamoussa, à partir de l'application."
-    "Bamoussa sort son téléphone. Il n'y avait plus du tout accès."
-    b2 "Ton compte a été volé et l'auteur du vol a modifié le mot de passe. [povname] a eu plus de chances que toi sur ce coup."
+    b2 "Alors, vos comptes Echord ont été hackés ?"
+    a "Non, juste celui de Bamoussa."
+    b2 "Regarde si tu peux encore y accéder."
+    "Bamoussa tente de se connecter. Impossible."
+
+    b2 "Mot de passe changé. Essaie de le réinitialiser avec 'mot de passe oublié'."
+    b2 "Et vérifie tes mails, parfois on peut annuler un changement suspect."
     hide bamoussa_default
     show bamoussa_anxious at left
-    b "Qu'est-ce que je peux faire du coup ?"
-    b2 "Essaie de te connecter d'une autre façon. Par exemple, en cliquant sur mot de passe oublié."
-    b2 "Ensuite, tu tentes de réinitialiser ton mot de passe !"
-    b2 "Si le hacker essaie de changer de mail pour couper complètement ton accès au compte, regarde si tu as reçu un mail de changement d'email. Tu peux ensuite annuler la modification !"
-    b "D'accord je vais faire ça... Quoi d'autre ?"
-    b2 "Tu peux ensuite contacter le support du service, ils peuvent t'aider si tu fournis des preuves que c'est bien ton compte bien sûr !"
-    b2 "Si tu utilises le même mot de passe à d'autres endroits, je te conseille de vite les changer !"
-    b "Ok tu me sauves la vie... Merci beaucoup ! Et si tout ça ne fonctionne pas ?"
-    b2 "Alors je te conseille d'abandonner ton compte, de prévenir tes proches et d'en créer un nouveau ! C'est triste mais parfois c'est comme ça."
+    b "Ok, je vais tester. Et si ça marche pas ?"
+    b2 "Contacte le support, envoie des preuves. Et change tes mots de passe ailleurs si tu les as réutilisés."
 
-    "J'interromps leur discussion."
-    a "Admettons qu'il aurait eu encore accès à son compte qu'est-ce qu'il aurait pu faire ?"
-    b2 "Il aurait pu changer de mot de passe, ensuite activer l'authentification à deux facteurs en privilégiant les applications d'authentification. Ca ajoutera une sécurité supplémentaire à l'accès de son compte."
-    "Je prends en note toutes les consignes de Binta, on ne sait jamais."
-    a "Quoi faire ensuite ?"
-    b2 "Il faut déconnecter ensuite tous les appareils connectés à son compte, ils n'auront plus accès, et prévenir ses proches si jamais ils ont reçu des emails piégés à partir de son compte !"
-    a "Tu nous sauves vraiment la vie... Merci beaucoup !"
-    b "Mais qui a pu hacker mon compte ?"
-    menu: 
-        a "Personnellement je pense..."
+    b "Merci beaucoup… et si je récupère pas le compte ?"
+    b2 "Crée-en un nouveau, et préviens tes proches."
+
+    a "Et s’il avait encore accès à son compte ?"
+    b2 "Il aurait dû changer le mot de passe, activer l’authentification à deux facteurs et déconnecter tous les appareils."
+
+    a "Et prévenir ses proches s’il y a eu des messages suspects, j’imagine ?"
+    b2 "Exactement."
+
+    a "Tu nous sauves vraiment la mise, merci !"
+    b "Mais… qui a pu hacker mon compte ?"
+
+    menu:
+        a "Personnellement je pense…"
 
         "Que c'est un manque de bol.":
             $ bad_choices += 1
@@ -505,17 +500,20 @@ label goodChoice_passwordSafe:
             jump culpritFound2
 
 label culpritFound2:
-    a "C'est quand même étrange que ça a commencé au moment de la création du compte Echord non ?"
-    b "Pas faux, tu penses que ça a un rapport ?"
-    a "C'est évident que ça a un rapport. C'est très probable qu'une personne du groupe s'en est pris à toi..."
-    "Je ne vois aucune autre explication. Il se pourrait que ce soit une attaque tout à fait aléatoire, mais ça m'étonnerait..."
-    b2 "Le problème c'est que le groupe Echord était ouvert, n'importe qui pouvait envoyer un lien d'invitation à n'importe qui, ce qui fait que les membres du groupe ne sont pas régulés."
-    b "Si possible j'essaierai de changer les paramètres... Dans tous les cas, je ferai tout pour savoir précisément qui rejoint ou quitte le groupe."
-    "Bamoussa n'a préféré ne pas dire qu'il était aussi responsable du nombre d'inconnus dans le groupe Echord, après tout il en a ajouté plusieurs... oups !"
-    b2 "Vous avez besoin de mon aide sur autre chose ?"
-    b "Non ça va merci beaucoup Binta t'es vraiment la meilleure..."
-    b2 "Y a pas de quoi ! Si vous avez de nouveaux problèmes hésitez pas à m'appeler."
-    "Après quelques échanges, chacun part dans sa direction pour rentrer chez eux. Sacrée journée !"
+    a "C’est bizarre que ça ait commencé juste après la création du groupe, non ?"
+    b "Tu crois que ça vient de là ?"
+    a "C’est très probable. N’importe qui pouvait rejoindre avec un lien."
+    b2 "Oui, c’était ouvert, donc sans modération, n’importe qui a pu s’infiltrer."
+    b "Je vais revoir les paramètres, limiter les invitations. Faut que je sache qui entre dans le groupe."
+
+    "Bamoussa ne dit rien, mais il sait qu’il a lui-même ajouté pas mal d’inconnus… oups."
+
+    b2 "Besoin d’autre chose ?"
+    b "Non, merci Binta. T’es au top."
+    b2 "Avec plaisir. Et si besoin, appelez-moi !"
+
+    "Après quelques mots, chacun rentre chez soi. Fin de journée mouvementée."
+
 
 label endofChap1: 
     scene bg_bedroom_night_lightOff
@@ -528,8 +526,6 @@ label endofChap1:
 
     centered "{size=+75}{cps=8}{color=#ffffff}Chapitre 1{/color}{/cps}{/size}{p=5.0}{nw}" 
     centered "{size=+75}{cps=8}{color=#ffffff}terminé{/color}{/cps}{/size}{p=5.0}{nw}"
-
-
 
 
 label chapter2: 
@@ -571,8 +567,10 @@ label invitationAccepte:
     l "Salut! J'ai vu tes messages sur le groupe Echord de [jeu] et tu as l'air super cool. Ça te dirait de discuter un peu?"
     menu:
         "Accepter de discuter":
+            $ bad_choices += 1 
             jump acceptChat
         "Ignorer le message":
+            $ good_choices += 1
             jump ignoreChat
 label ignoreChat:
     "Je pense qu'il est préférable de ne pas répondre. Après tout, je ne connais même pas la personne."
@@ -724,10 +722,10 @@ label fake:
         b "je reconnais leur nom... C'était des gens qui m'ont aussi contacté une fois. Ces personnes sont horribles."
         b "On doit clairement éviter de parler à n'importe qui sur internet."
         a "Pas faux..."
-        "La cloche sonne, signalant le début de la récréation. Bamoussa et moi continuons notre discussion sur le cyberharcèlement et comment s'en prémunir."
+        "La cloche sonne, signalant le début de la récréation. Bamoussa et moi continuons notre discussion sur le phishing et comment s'en prémunir."
 
     else:
-        "La cloche sonne, signalant le début de la récréation. Bamoussa et moi continuons notre discussion sur le cyberharcèlement et comment s'en prémunir."
+        "La cloche sonne, signalant le début de la récréation. Bamoussa et moi continuons notre discussion sur le phishing et comment s'en prémunir."
 
 
     jump afterEmail
@@ -753,7 +751,7 @@ label afterEmail:
     "Une fois arrivée chez moi, je décide de tout expliquer à ma mère."
     "Elle était tout d'abord choquée quand j'ai commencé mon histoire, puis son choc est passé à l'énervement."
     "Ce n'est pas contre moi qu'elle était énervée. C'est contre ces individus qui nous ciblent qu'elle l'est."
-    "Demain est un jour férié; on compte bien aller porter plainte afin que justice soit rendue. Ils n'auront plus l'occasion d'harcèler quelqu'un d'autre une fois que le problème sera résolu."
+    "Dans la hâte, elle m'emmène au commiseriat afin de porter plainte contre mes harceleurs."
 
     scene bg_bedroom_night_lightOff with dissolve
     play music "music/night_time.mp3"
@@ -762,16 +760,26 @@ label afterEmail:
     "Je pensais que ça n’arrivait qu’aux autres. Qu’on repérait facilement les arnaques, les faux profils, les pièges. Mais la vérité, c’est qu’ils savent exactement comment s’y prendre."
     "Il y a des individus mal intentionnés dans notre monde, qui chercheront par tous les moyens possibles de te détruire par pur plaisir."
     "Derrière un écran, tout le monde peut mentir. En sachant cela, on a tous intérêt à apprendre comment vivre ensemble, ou sinon à apprendre à se protéger."
-    "Je réfléchis à tout ça avant de m'endormir paisiblement."
 
-    centered "{size=+75}{cps=8}{color=#ffffff}Chapitre 2{/color}{/cps}{/size}{p=5.0}{nw}" 
+    if bad_choices < 3:
+        "Je réfléchis à tout ça avant de m'endormir paisiblement."
+
+    else:
+        "J'ai énormément de mal à dormir ces derniers jours. Les pensées se bousculent, et j'ai l'impression de m'engouffrer peu à peu dans un sombre abysse."
+        "C'est fou de se dire que certaines personnes veulent juste faire souffrir une autre. Qu'ont-ils à y gagner ? Ce genre de plaisir sadique devrait être puni."
+
+    centered "{size=+75}{cps=8}{color=#ffffff}Chapitre 3{/color}{/cps}{/size}{p=5.0}{nw}" 
     centered "{size=+75}{cps=8}{color=#ffffff}terminé{/color}{/cps}{/size}{p=5.0}{nw}"
+
+   
 
     scene bg_black_screen with fade:
         xalign 0.5
         yalign 0.2
         zoom 2.0
 
+    centered "Nombre de bons choix : [good_choices]"
+    centered "Nombre de mauvais choix : [bad_choices]"
     centered "{size=+75}{cps=8}{color=#ffffff}CRÉDITS{/color}{/cps}{/size}{p=5.0}{nw}"
     centered "{size=+75}{cps=8}{color=#ffffff}Scénario: Étudiants de Louise Michel{/color}{/cps}{/size}{p=5.0}{nw}"
     centered "{size=+75}{cps=8}{color=#ffffff}programmation: Vegacy{/color}{/cps}{/size}{p=5.0}{nw}"
